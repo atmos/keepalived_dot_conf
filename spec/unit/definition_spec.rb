@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Kernel do
   before(:all) do
-    @parser = Pars::KeepAlived::Parser.new
+    @parser = KeepAlived::Parser.new
   end
   describe "calling .parse" do
     describe "with no parameters" do

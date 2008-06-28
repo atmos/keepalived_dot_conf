@@ -1,13 +1,13 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Pars::KeepAlived::Parser, "parsing" do
+describe KeepAlived::Parser, "parsing" do
   before(:all) do
-    @parser = Pars::KeepAlived::Parser.new
+    @parser = KeepAlived::Parser.new
   end
   
   describe "keepalived.conf as input" do
     before(:all) do
-      @result = @parser.parse(File.read(File.dirname(__FILE__)+'/../fixtures/keepalived/keepalived.conf'))
+      @result = @parser.parse(File.read(File.dirname(__FILE__)+'/../fixtures/keepalived.conf'))
       # pp @parser
       # raise ArgumentError
     end

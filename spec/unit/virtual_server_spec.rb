@@ -1,6 +1,6 @@
 describe KeepAlivedConfigFile::AST::VirtualServer, "virtual_server { } in keepalived.conf" do
   before(:all) do
-    @parser = Pars::KeepAlived::Parser.new
+    @parser = KeepAlived::Parser.new
   end
   it "should not be nil" do
     @parser.should_not be_nil

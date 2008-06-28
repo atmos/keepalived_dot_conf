@@ -7,10 +7,10 @@ require 'date'
 
 GEM = "keepalived_dot_conf"
 GEM_VERSION = "0.0.1"
-AUTHOR = "Your Name"
-EMAIL = "Your Email"
-HOMEPAGE = "http://example.com"
-SUMMARY = "A gem that provides..."
+AUTHOR = "Corey Donohoe"
+EMAIL = "atmos@atmos.org"
+HOMEPAGE = "http://atmos.org"
+SUMMARY = "A gem that provides routines for interacting with keepalived.conf"
 
 spec = Gem::Specification.new do |s|
   s.name = GEM

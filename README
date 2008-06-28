@@ -1,4 +1,30 @@
 keepalived_dot_conf
 ===================
 
-A gem that provides...
+A gem that provides parsing of keepalived's config file
+
+
+usage
+=====
+
+mpro% irb
+>> require 'lib/keepalived_dot_conf'
+=> true
+>> require 'pp'
+=> true
+>> pp KeepAlived::Parser.new.parse(File.read("spec/fixtures/keepalived.conf")).eval({})[:virtual_servers].first
+#<KeepAlivedConfigFile::AST::VirtualServer:0x12f8108
+ @delay_loop="6",
+ @ip="192.168.0.1",
+ @lb_algo="lc",
+ @lb_kind="NAT",
+ @nat_mask="255.255.255.0",
+ @persistence_timeout="0",
+ @port="80",
+ @protocol="TCP",
+ @sorry_server=
+  #<KeepAlivedConfigFile::AST::IpMapping:0x12f8068
+   @ip="127.0.0.1",
+   @port="80">,
+ @virtualhost=nil>
+=> nil

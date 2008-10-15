@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Kernel do
+describe KeepAlivedConfigFile::Grammar do
   before(:all) do
-    @parser = KeepAlived::Parser.new
+    @parser = KeepAlivedConfigFile::Parser.new
   end
   describe "calling .parse" do
     describe "with no parameters" do
@@ -13,7 +13,7 @@ describe Kernel do
         @result.should_not be_nil
       end
       it "should return a config file you shouldn't use" do
-        @result.should be_a_kind_of(KeepAlivedConfigFileYouShouldntUse::ConfigFile)
+        @result.should be_a_kind_of(KeepAlivedConfigFile::Grammar::ConfigFile)
       end
       describe "calling .eval on the result" do
         before(:all) do

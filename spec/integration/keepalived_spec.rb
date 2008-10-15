@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe KeepAlived::Parser, "parsing" do
+describe KeepAlivedConfigFile::Parser, "parsing" do
   before(:all) do
-    @parser = KeepAlived::Parser.new
+    @parser = KeepAlivedConfigFile::Parser.new
   end
   
   describe "keepalived.conf as input" do
@@ -14,8 +14,8 @@ describe KeepAlived::Parser, "parsing" do
     it "shouldn't be nil" do
       @result.should_not be_nil
     end
-    it "should return a kind of KeepAlivedConfigFileYouShouldntUse::ConfigFile" do
-      @result.should be_a_kind_of(KeepAlivedConfigFileYouShouldntUse::ConfigFile)
+    it "should return a kind of KeepAlivedConfigFile::Grammar::ConfigFile" do
+      @result.should be_a_kind_of(KeepAlivedConfigFile::Grammar::ConfigFile)
     end
 
     describe "evaluated output" do

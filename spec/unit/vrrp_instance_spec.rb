@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe KeepAlivedConfigFile::AST::VrrpInstance, "vrrp_instance { } in keepalived.conf" do
   before(:all) do
-    @parser = KeepAlived::Parser.new
+    @parser = KeepAlivedConfigFile::Parser.new
   end
   it "should not be nil" do
     @parser.should_not be_nil
@@ -34,7 +34,7 @@ EOF
         @result.should_not be_nil
       end
       it "should return a config file you shouldn't use" do
-        @result.should be_a_kind_of(KeepAlivedConfigFileYouShouldntUse::ConfigFile)
+        @result.should be_a_kind_of(KeepAlivedConfigFile::Grammar::ConfigFile)
       end
       describe " calling .eval" do
         before(:all) do
